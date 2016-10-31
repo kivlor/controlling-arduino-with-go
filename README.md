@@ -1,2 +1,3 @@
-# controlling-arduino-with-go
-lightening talk on controlling arduino with go
+### Controlling Arduino With Go
+
+Lightening talk on controlling Arduino with Go
