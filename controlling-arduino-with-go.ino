@@ -37,6 +37,10 @@ void setup() {
 
 void loop() {
   if (!Serial) {
+    currentRed = 255;
+    currentGreen = 255;
+    currentBlue = 255;
+
     ringPulse();
 
     return;
@@ -44,30 +48,27 @@ void loop() {
   
   ringBright();
 
-  colorUpdate();
-}
-
-void colorUpdate()
-{
-  while (Serial.available() > 0) {
-    int red = Serial.parseInt();
-    int green = Serial.parseInt();
-    int blue = Serial.parseInt();
-
-    if (Serial.read() == '\n') {
-      red = constrain(red, 0, 255);
-      green = constrain(green, 0, 255);
-      blue = constrain(blue, 0, 255);
-
-      currentRed = red;
-      currentGreen = green;
-      currentBlue = blue;
-
-      Serial.print(red, DEC);
-      Serial.print(',');
-      Serial.print(green, DEC);
-      Serial.print(',');
-      Serial.println(blue, DEC);
+  if (Serial.available()) {
+    while (Serial.available() > 0) {
+      int red = Serial.parseInt();
+      int green = Serial.parseInt();
+      int blue = Serial.parseInt();
+  
+      if (Serial.read() == '\n') {
+        red = constrain(red, 0, 255);
+        green = constrain(green, 0, 255);
+        blue = constrain(blue, 0, 255);
+  
+        currentRed = red;
+        currentGreen = green;
+        currentBlue = blue;
+  
+        Serial.print(red, DEC);
+        Serial.print(',');
+        Serial.print(green, DEC);
+        Serial.print(',');
+        Serial.println(blue, DEC);
+      }
     }
   }
 }
