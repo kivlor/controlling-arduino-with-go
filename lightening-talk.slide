@@ -1,0 +1,30 @@
+Controlling Arduino With Go
+
+* G'day
+
+- I'm Andrew 😎
+- I work for _insert shipping company here_
+- I'm slowly becoming a `gopher` 🐹
+
+* An Ardu What Now?
+
+- Arduino, a micro-crontroller development board
+- Aimed at pros and hobbyists
+- Can controll ALL THE THINGS! 💪
+- Programmed using a C/C++ like language
+
+* So how does Go enter into the picture?
+
+- Arduino's (mostly) can't connect to the internet by themselves
+- Go can become the 'thing' when talking IoT and Arduino
+- There several option for controlling Arduino with Go (formatta, serial, I2C, .etc)
+- Go has established libraries for controlling Arduino (gobot.io, embd.io, etc.)
+
+* Can haz demo?
+
+- Sure...
+
+* Questions?
+
+🖼 This talk (and code): [[https://git.io/vX4T2]]
+🙋 More of me: [[http://kivlor.com]]
