@@ -28,7 +28,7 @@ func main() {
 
 	// crate a basic web server...
 	http.HandleFunc("/", root)
-	http.HandleFunc("/change", change)
+	http.HandleFunc("/update", update)
 	http.ListenAndServe(":8080", nil)
 }
 
@@ -56,7 +56,7 @@ func root(w http.ResponseWriter, r *http.Request) {
     <script type="text/javascript">
       function sendColor(red, green, blue) {
         var request = new XMLHttpRequest();
-        request.open('POST', '/change', true);
+        request.open('POST', '/update', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({ r: +red, g: +green, b: +blue }));
       }
@@ -71,7 +71,7 @@ func root(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, nil)
 }
 
-func change(w http.ResponseWriter, r *http.Request) {
+func update(w http.ResponseWriter, r *http.Request) {
 	// create color struct
 	var c struct {
 		Red   int `json:"r"`
