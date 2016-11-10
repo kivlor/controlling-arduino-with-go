@@ -14,8 +14,8 @@ var s *serial.Port
 func main() {
 	// create a config struct
 	c := &serial.Config{
-		Name: "/dev/tty.usbmodem1441",
-		Baud: 9600,
+		Name: "/dev/tty.usbmodem1234", // Change this to your device
+		Baud: 9600,                    // Change this to your devices data rate for serial
 	}
 
 	// open the serial port using the config
@@ -26,7 +26,7 @@ func main() {
 	}
 	defer s.Close()
 
-	// crate a basic web server...
+	// create a basic web server...
 	http.HandleFunc("/", root)
 	http.HandleFunc("/update", update)
 	http.ListenAndServe(":8080", nil)
@@ -41,7 +41,7 @@ func root(w http.ResponseWriter, r *http.Request) {
     <style>
       * { box-sizing: border-box; }
       div#colors { margin: 20px auto; width: 600px; overflow: hidden; }
-      div#colors div { display: inline; float: left; width: 200px; height: 200px; border: 10px solid #fff; cursor: pointer; }
+      div#colors div { display: inline; float: left; width: 200px; height: 200px; border: 10px solid #333; cursor: pointer; }
     </style>
   </head>
   <body>
