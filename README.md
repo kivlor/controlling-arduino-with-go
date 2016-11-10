@@ -4,11 +4,11 @@
 
 Lightening talk on controlling Arduino with Go 🐹
 
-#### Setting Up The Arduino
+#### Setting Up Arduino
 
-First you'll need to setup the [Arduino IDE](https://www.arduino.cc/en/Main/Software), connect an Arduino to you computer and make sure you can compile.
+First you'll need to setup the [Arduino IDE](https://www.arduino.cc/en/Main/Software), connect an Arduino to your computer and make sure you can compile.
 
-Once you've done that you can follow the [ReadASCIIString](https://www.arduino.cc/en/Tutorial/ReadASCIIString) demo. This will guide you to setup a simple circuit, compile the code and test send data via the Arduino IDE serial monitor.
+Once you've done that you can follow the [ReadASCIIString](https://www.arduino.cc/en/Tutorial/ReadASCIIString) demo. This will guide you to setup a simple circuit, compile the code and send data via the Arduino IDE serial monitor.
 
 You can take a look at this project's `controlling-arduino-with-go.ino` file to see how I adapted the demo to control an Adafruit NeoPixel.
 
@@ -27,7 +27,7 @@ Move into this package's directory on your machine, adjust the port and BAUD in 
 
 ##### Demo One
 
-The first demo sends RGB strings to the Arduino via serial. It cycles through red (`255,0,0`), green (`0,255,0`) and green (`0,0,255`). Run with:
+The first demo sends RGB strings to the Arduino via serial. It cycles through red (`255,0,0`), green (`0,255,0`) and blue (`0,0,255`). Run with:
 
 ```
 $ go run demo-one.go
@@ -48,10 +48,10 @@ In your browser visit [127.0.0.1:8080](http://127.0.0.1:8080) and you should be 
 The final demo again uses the `net/http` package to start up a simple web server on port 8080. Run with:
 
 ```
-$ go run demo-two.go
+$ go run demo-three.go
 ```
 
-This demo is written to receive build web hooks from [Travis CI](https://travis-ci.org/). It converts the build status Pending, Passed and Failed into Yellow, Green and Red RGB values. Like the other demos these RGB values are sent to the Arduino via serial.
+This demo is written to receive build web hooks from [Travis CI](https://travis-ci.org/). It converts the build statuses Pending, Passed and Failed into Yellow, Green and Red RGB values. Like the other demos these RGB values are sent to Arduino via serial.
 
 This demo hasn't been fully tested so you might need to make some adjustments.
 
