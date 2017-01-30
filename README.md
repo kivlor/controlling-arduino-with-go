@@ -60,7 +60,7 @@ This demo hasn't been fully tested so you might need to make some adjustments.
 Install the present tool:
 
 ```
-$ go get -u golang.org/x/tools/present
+$ go get golang.org/x/tools/cmd/present
 ```
 
 From the directory call `present`:
